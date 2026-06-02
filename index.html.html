@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Series · Opción 3</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f8f4ef;
+    --text: #18160f;
+    --muted: #a09880;
+    --border: #e2ddd4;
+    --surface: #fff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Bricolage Grotesque', sans-serif; min-height: 100vh; }
+
+  .page { max-width: 980px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* HEADER */
+  .header {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 16px; padding: 48px 0 32px; flex-wrap: wrap;
+  }
+
+  .header-left h1 {
+    font-size: clamp(32px, 6vw, 56px); font-weight: 800;
+    line-height: 1; letter-spacing: -2px;
+  }
+
+  .header-left h1 .highlight {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6b35 0%, #f7c59f 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .header-left p { font-size: 13px; color: var(--muted); margin-top: 6px; letter-spacing: 1px; }
+
+  .btn-add {
+    background: var(--text); border: none; border-radius: 100px;
+    color: #fff; padding: 12px 24px;
+    font-family: 'Bricolage Grotesque', sans-serif; font-size: 14px; font-weight: 700;
+    cursor: pointer; display: flex; align-items: center; gap: 8px;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  }
+  .btn-add:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+
+  /* STATS */
+  .stats-row {
+    display: flex; gap: 12px; margin-bottom: 28px; flex-wrap: wrap;
+  }
+  .stat-card {
+    flex: 1; min-width: 80px;
+    background: var(--surface); border: 1.5px solid var(--border); border-radius: 14px;
+    padding: 14px 16px;
+  }
+  .sc-num { font-size: 28px; font-weight: 800; letter-spacing: -1px; line-height: 1; }
+  .sc-num.green { color: #16a34a; }
+  .sc-num.blue  { color: #2563eb; }
+  .sc-num.amber { color: #d97706; }
+  .sc-lbl { font-size: 11px; color: var(--muted); font-weight: 500; margin-top: 4px; letter-spacing: 0.5px; }
+
+  /* TOOLBAR */
+  .toolbar {
+    display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; align-items: center;
+  }
+  .search-box {
+    flex: 1; min-width: 180px;
+    background: var(--surface); border: 1.5px solid var(--border); border-radius: 100px;
+    padding: 10px 18px; font-family: 'Bricolage Grotesque', sans-serif; font-size: 13px;
+    color: var(--text); outline: none; transition: border-color 0.2s;
+  }
+  .search-box:focus { border-color: #ff6b35; }
+  .search-box::placeholder { color: var(--muted); }
+
+  .sort-sel {
+    background: var(--surface); border: 1.5px solid var(--border); border-radius: 100px;
+    padding: 10px 18px; font-family: 'Bricolage Grotesque', sans-serif; font-size: 13px;
+    color: var(--text); outline: none; cursor: pointer;
+  }
+
+  /* PILLS */
+  .pills { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+  .pill {
+    font-size: 13px; font-weight: 600; padding: 7px 18px; border-radius: 100px;
+    border: 1.5px solid var(--border); background: var(--surface);
+    color: var(--muted); cursor: pointer; transition: all 0.15s;
+  }
+  .pill:hover { border-color: #ff6b35; color: var(--text); }
+  .pill.active { background: var(--text); border-color: var(--text); color: #fff; }
+
+  /* LIST — card style */
+  .series-list { display: flex; flex-direction: column; gap: 6px; }
+
+  .s-card {
+    background: var(--surface); border: 1.5px solid var(--border); border-radius: 16px;
+    padding: 14px 18px;
+    display: grid; grid-template-columns: 32px 1fr auto auto auto;
+    gap: 16px; align-items: center;
+    transition: box-shadow 0.15s, border-color 0.15s;
+    animation: cardIn 0.25s ease both;
+  }
+  .s-card:hover { border-color: #d4ccc0; box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+
+  @keyframes cardIn {
+    from { opacity:0; transform:scale(0.98); }
+    to   { opacity:1; transform:scale(1); }
+  }
+
+  .s-num { font-size: 13px; font-weight: 700; color: #ccc; text-align: center; }
+  .s-name { font-size: 15px; font-weight: 700; color: var(--text); }
+
+  .genre-chip {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    padding: 3px 10px; border-radius: 100px; margin-top: 5px;
+  }
+
+  .stars { display:flex; gap:3px; }
+  .star { font-size:14px; cursor:pointer; color:#e5e0d5; transition:color 0.1s; user-select:none; }
+  .star.on { color:#f59e0b; }
+  .star:hover { color:#f59e0b; }
+
+  .note-btn {
+    background: var(--bg); border: 1.5px solid var(--border); border-radius: 100px;
+    color: var(--muted); font-size: 11px; font-weight: 600;
+    padding: 5px 12px; cursor: pointer;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    max-width: 88px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    transition: all 0.15s;
+  }
+  .note-btn:hover { border-color: #ff6b35; color: var(--text); }
+  .note-btn.has { color: #555; background: #f0ede8; }
+
+  .status-wrap { position: relative; }
+  .s-badge {
+    display: inline-block; font-size: 11px; font-weight: 700;
+    padding: 5px 13px; border-radius: 100px; white-space: nowrap;
+  }
+  .s-badge.vista     { background: #dcfce7; color: #166534; }
+  .s-badge.viendo    { background: #dbeafe; color: #1e40af; }
+  .s-badge.pendiente { background: #fef3c7; color: #92400e; }
+  .status-sel-hidden { position:absolute; inset:0; opacity:0; cursor:pointer; width:100%; }
+
+  /* GENRE COLORS */
+  .g-accion    { background:#fee2e2; color:#b91c1c; }
+  .g-drama     { background:#ede9fe; color:#6d28d9; }
+  .g-thriller  { background:#ffedd5; color:#c2410c; }
+  .g-comedia   { background:#fef9c3; color:#92400e; }
+  .g-scifi     { background:#e0f2fe; color:#0369a1; }
+  .g-aventura  { background:#dcfce7; color:#166534; }
+  .g-historica { background:#fdf4ff; color:#7e22ce; }
+  .g-romance   { background:#fce7f3; color:#9d174d; }
+  .g-animacion { background:#e0e7ff; color:#3730a3; }
+  .g-fantasia  { background:#f3e8ff; color:#6b21a8; }
+  .g-default   { background:#f1f5f9; color:#475569; }
+
+  /* POPUP */
+  .overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.4); z-index:200; align-items:center; justify-content:center; }
+  .overlay.open { display:flex; }
+  .popup {
+    background: var(--surface); border-radius: 20px; padding: 2rem;
+    width: 380px; max-width: 92vw;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.15);
+  }
+  .popup h3 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 1.25rem; }
+  .field { display:flex; flex-direction:column; gap:4px; margin-bottom:.9rem; }
+  .field label { font-size:11px; font-weight:700; color:var(--muted); letter-spacing:1px; text-transform:uppercase; }
+  .field input,.field select,.field textarea {
+    border:1.5px solid var(--border); border-radius:12px;
+    background:var(--bg); padding:10px 14px; color:var(--text);
+    font-family:'Bricolage Grotesque',sans-serif; font-size:14px; outline:none; width:100%;
+    transition:border-color 0.2s;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus { border-color:#ff6b35; }
+  .field textarea { resize:none; height:72px; }
+  .popup-btns { display:flex; gap:8px; justify-content:flex-end; margin-top:1.25rem; }
+  .btn-cancel { background:none; border:1.5px solid var(--border); border-radius:100px; color:var(--muted); padding:9px 22px; font-family:'Bricolage Grotesque',sans-serif; font-size:13px; font-weight:600; cursor:pointer; }
+  .btn-ok { background:var(--text); border:none; border-radius:100px; color:#fff; padding:9px 22px; font-family:'Bricolage Grotesque',sans-serif; font-size:13px; font-weight:700; cursor:pointer; }
+  .empty { padding:4rem; text-align:center; color:var(--muted); }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <div class="header-left">
+      <h1>Historial de<br><span class="highlight">Series</span></h1>
+      <p>Iosi &amp; Pire · tracker</p>
+    </div>
+    <button class="btn-add" onclick="openAdd()">＋ Agregar</button>
+  </div>
+
+  <div class="stats-row" id="stats"></div>
+
+  <div class="toolbar">
+    <input class="search-box" id="search" type="text" placeholder="Buscar serie o género..." oninput="render()">
+    <select class="sort-sel" id="sortSel" onchange="render()">
+      <option value="default">Orden original</option>
+      <option value="name">A → Z</option>
+      <option value="rating">Mejor rating</option>
+      <option value="status">Por estado</option>
+    </select>
+  </div>
+
+  <div class="pills">
+    <button class="pill active" onclick="setFilter('todas',this)">Todas</button>
+    <button class="pill" onclick="setFilter('vista',this)">Vistas</button>
+    <button class="pill" onclick="setFilter('viendo',this)">Viendo</button>
+    <button class="pill" onclick="setFilter('pendiente',this)">Pendientes</button>
+  </div>
+
+  <div class="series-list" id="list"></div>
+</div>
+
+<div class="overlay" id="noteOverlay">
+  <div class="popup">
+    <h3 id="noteTitle"></h3>
+    <div class="field"><label>Estado</label><select id="noteStatus"><option value="pendiente">⏳ Pendiente</option><option value="viendo">▶ Viendo</option><option value="vista">✓ Vista</option></select></div>
+    <div class="field"><label>Nota</label><textarea id="noteText" placeholder="Ej: quedamos S2 E4..."></textarea></div>
+    <div class="popup-btns"><button class="btn-cancel" onclick="closeNote()">Cancelar</button><button class="btn-ok" onclick="saveNote()">Guardar</button></div>
+  </div>
+</div>
+<div class="overlay" id="addOverlay">
+  <div class="popup">
+    <h3>Nueva Serie</h3>
+    <div class="field"><label>Nombre</label><input id="addName" type="text" placeholder="Ej: Dark"></div>
+    <div class="field"><label>Género</label><input id="addGenre" type="text" placeholder="Ej: Thriller"></div>
+    <div class="field"><label>Estado</label><select id="addStatus"><option value="pendiente">⏳ Pendiente</option><option value="viendo">▶ Viendo</option><option value="vista">✓ Vista</option></select></div>
+    <div class="field"><label>Nota</label><textarea id="addNote" placeholder="Comentario..."></textarea></div>
+    <div class="popup-btns"><button class="btn-cancel" onclick="closeAdd()">Cancelar</button><button class="btn-ok" onclick="confirmAdd()">Agregar</button></div>
+  </div>
+</div>
+
+<script>
+const SERIES_BASE=[{id:1,name:"Prison Break",genre:"Acción"},{id:2,name:"Riverdale",genre:"Drama"},{id:3,name:"El marginal",genre:"Drama"},{id:4,name:"La casa de papel",genre:"Thriller"},{id:5,name:"Stranger Things",genre:"Ciencia ficción"},{id:6,name:"Élite",genre:"Drama"},{id:7,name:"Vis a vis",genre:"Drama"},{id:8,name:"Sex Education",genre:"Comedia"},{id:9,name:"Arrow",genre:"Acción"},{id:10,name:"The Flash",genre:"Acción"},{id:11,name:"Legends of Tomorrow",genre:"Acción"},{id:12,name:"Daredevil",genre:"Acción"},{id:13,name:"El juego del calamar",genre:"Thriller"},{id:14,name:"Los 100",genre:"Ciencia ficción"},{id:15,name:"Iron Fist",genre:"Acción"},{id:16,name:"Supergirl",genre:"Acción"},{id:17,name:"Lupin",genre:"Thriller"},{id:18,name:"The Defenders",genre:"Acción"},{id:19,name:"Cobra Kai",genre:"Drama"},{id:20,name:"La ley de los audaces",genre:"Drama"},{id:21,name:"Vikingos",genre:"Histórica"},{id:22,name:"The Umbrella Academy",genre:"Ciencia ficción"},{id:23,name:"Outer Banks",genre:"Aventura"},{id:24,name:"Alguien está mintiendo",genre:"Thriller"},{id:25,name:"Breaking Bad",genre:"Drama"},{id:26,name:"The Society",genre:"Drama"},{id:27,name:"Lejos del hogar",genre:"Drama"},{id:28,name:"Bridgerton",genre:"Romance"},{id:29,name:"Caleidoscopio",genre:"Thriller"},{id:30,name:"Ginny & Georgia",genre:"Drama"},{id:31,name:"The Rain",genre:"Ciencia ficción"},{id:32,name:"Trinkets",genre:"Drama"},{id:33,name:"How to Sell Drugs Online",genre:"Comedia"},{id:34,name:"Dinastía",genre:"Drama"},{id:35,name:"Glitch",genre:"Ciencia ficción"},{id:36,name:"El agente nocturno",genre:"Thriller"},{id:37,name:"Chacal",genre:"Thriller"},{id:38,name:"Jóvenes y millonarios",genre:"Drama"},{id:39,name:"Vikingos: Valhalla",genre:"Histórica"},{id:40,name:"El verano en que me enamoré",genre:"Romance"},{id:41,name:"One Tree Hill",genre:"Drama"},{id:42,name:"The Boys",genre:"Acción"},{id:43,name:"Game of Thrones",genre:"Fantasía"},{id:44,name:"Avatar: Aang",genre:"Animación"},{id:45,name:"Avatar: Korra",genre:"Animación"},{id:46,name:"El eternauta",genre:"Ciencia ficción"},{id:47,name:"Berlín",genre:"Thriller"}];
+const GC={"Acción":"g-accion","Drama":"g-drama","Thriller":"g-thriller","Comedia":"g-comedia","Ciencia ficción":"g-scifi","Aventura":"g-aventura","Histórica":"g-historica","Romance":"g-romance","Animación":"g-animacion","Fantasía":"g-fantasia"};
+const KEY='sv3';
+let ud=JSON.parse(localStorage.getItem(KEY)||'null');
+if(!ud){ud={series:{},custom:[],nextId:100};SERIES_BASE.forEach(s=>{ud.series[s.id]={status:'vista',rating:0,note:''};});save();}
+let filter='todas',activeNote=null;
+function save(){localStorage.setItem(KEY,JSON.stringify(ud));}
+function all(){return[...SERIES_BASE,...(ud.custom||[])];}
+function gd(id){if(!ud.series[id])ud.series[id]={status:'pendiente',rating:0,note:''};return ud.series[id];}
+function setFilter(f,el){filter=f;document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));el.classList.add('active');render();}
+function openNote(id){activeNote=id;const s=all().find(x=>x.id===id);const d=gd(id);document.getElementById('noteTitle').textContent=s.name;document.getElementById('noteStatus').value=d.status;document.getElementById('noteText').value=d.note||'';document.getElementById('noteOverlay').classList.add('open');setTimeout(()=>document.getElementById('noteText').focus(),50);}
+function closeNote(){document.getElementById('noteOverlay').classList.remove('open');activeNote=null;}
+function saveNote(){if(!activeNote)return;const d=gd(activeNote);d.note=document.getElementById('noteText').value.trim();d.status=document.getElementById('noteStatus').value;save();closeNote();render();}
+function openAdd(){['addName','addGenre','addNote'].forEach(i=>document.getElementById(i).value='');document.getElementById('addStatus').value='pendiente';document.getElementById('addOverlay').classList.add('open');setTimeout(()=>document.getElementById('addName').focus(),50);}
+function closeAdd(){document.getElementById('addOverlay').classList.remove('open');}
+function confirmAdd(){const n=document.getElementById('addName').value.trim();if(!n)return;const id=ud.nextId++;ud.custom=ud.custom||[];ud.custom.push({id,name:n,genre:document.getElementById('addGenre').value.trim()||'Sin género'});ud.series[id]={status:document.getElementById('addStatus').value,rating:0,note:document.getElementById('addNote').value.trim()};save();closeAdd();render();}
+function setRating(id,v,e){e.stopPropagation();const d=gd(id);d.rating=d.rating===v?0:v;save();const el=document.querySelector(`[data-sid="${id}"]`);if(el)el.innerHTML=sh(id);}
+function quickStatus(id,v,e){e.stopPropagation();gd(id).status=v;save();render();}
+function sh(id){const r=gd(id).rating;return[1,2,3,4,5].map(n=>`<span class="star ${r>=n?'on':''}" onclick="setRating(${id},${n},event)">★</span>`).join('');}
+function sl(s){return s==='vista'?'✓ Vista':s==='viendo'?'▶ Viendo':'⏳ Pendiente';}
+function render(){
+  const q=document.getElementById('search').value.toLowerCase();
+  const sort=document.getElementById('sortSel').value;
+  const a=all();
+  let list=a.filter(s=>{const d=gd(s.id);return(filter==='todas'||d.status===filter)&&(s.name.toLowerCase().includes(q)||s.genre.toLowerCase().includes(q));});
+  if(sort==='name')list.sort((a,b)=>a.name.localeCompare(b.name));
+  else if(sort==='rating')list.sort((a,b)=>gd(b.id).rating-gd(a.id).rating);
+  else if(sort==='status'){const o={viendo:0,vista:1,pendiente:2};list.sort((a,b)=>o[gd(a.id).status]-o[gd(b.id).status]);}
+  const vistas=a.filter(s=>gd(s.id).status==='vista').length;
+  const viendo=a.filter(s=>gd(s.id).status==='viendo').length;
+  const pend=a.filter(s=>gd(s.id).status==='pendiente').length;
+  const rated=a.filter(s=>gd(s.id).rating>0);
+  const avg=rated.length?(rated.reduce((x,s)=>x+gd(s.id).rating,0)/rated.length).toFixed(1):'—';
+  document.getElementById('stats').innerHTML=`
+    <div class="stat-card"><div class="sc-num">${a.length}</div><div class="sc-lbl">Total</div></div>
+    <div class="stat-card"><div class="sc-num green">${vistas}</div><div class="sc-lbl">Vistas</div></div>
+    <div class="stat-card"><div class="sc-num blue">${viendo}</div><div class="sc-lbl">Viendo</div></div>
+    <div class="stat-card"><div class="sc-num">${pend}</div><div class="sc-lbl">Pendientes</div></div>
+    <div class="stat-card"><div class="sc-num amber">${avg!=='—'?avg+' ★':'—'}</div><div class="sc-lbl">Promedio</div></div>
+  `;
+  if(!list.length){document.getElementById('list').innerHTML='<div class="empty">Sin resultados.</div>';return;}
+  document.getElementById('list').innerHTML=list.map((s,i)=>{
+    const d=gd(s.id);const gc=GC[s.genre]||'g-default';
+    const nl=d.note?d.note.slice(0,13)+(d.note.length>13?'…':''):'+ nota';
+    return`<div class="s-card" style="animation-delay:${Math.min(i,20)*0.018}s">
+      <span class="s-num">${s.id}</span>
+      <div><div class="s-name">${s.name}</div><span class="genre-chip ${gc}">${s.genre}</span></div>
+      <div class="stars" data-sid="${s.id}">${sh(s.id)}</div>
+      <button class="note-btn ${d.note?'has':''}" onclick="openNote(${s.id})">${nl}</button>
+      <div class="status-wrap"><span class="s-badge ${d.status}">${sl(d.status)}</span>
+        <select class="status-sel-hidden" onchange="quickStatus(${s.id},this.value,event)" onclick="event.stopPropagation()">
+          <option value="pendiente" ${d.status==='pendiente'?'selected':''}>⏳ Pendiente</option>
+          <option value="viendo" ${d.status==='viendo'?'selected':''}>▶ Viendo</option>
+          <option value="vista" ${d.status==='vista'?'selected':''}>✓ Vista</option>
+        </select></div>
+    </div>`;
+  }).join('');
+}
+['noteOverlay','addOverlay'].forEach(id=>{document.getElementById(id).addEventListener('click',function(e){if(e.target===this){this.classList.remove('open');activeNote=null;}});});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('.overlay.open').forEach(p=>p.classList.remove('open'));activeNote=null;}});
+render();
+</script>
+</body>
+</html>
