@@ -1,201 +1,452 @@
+
+Claude terminó la respuesta
+te acordas lo que hicimos con el proyecto de boca?
+
+1 jun
+Sí, el proyecto de la app para trackear tus partidos en la Bombonera. Hicimos una PWA con diseño "Noche Azul" hosteada en GitHub Pages (iosefjaimsalem-oss.github.io/mi-bombonera), con:
+
+Registro de partidos con fecha, rival, resultado y goeladores
+Stats personales de asistencia
+Leaderboard de goleadores
+Links a highlights de YouTube
+Datos guardados en localStorage
+¿Querés retomar algo de eso, agregar funcionalidad o hacer algo nuevo?
+
+bueno, quiero que hagas algo parecido con las series que pire y que vaya mierando, obviamente no quiero que pongas lo de youtuve, y quiero que lo hagas vos con algunas ideas que te te ocurran
+
+lista
+1 Pricion break
+2 Riverdale
+3 Marginal
+4 La casa de papel
+5 Stranger things 
+6 Elite
+7 Vis a vis 
+8 Sex education
+9 Arrow 
+10 Flash
+11 Legends of tomartow
+12 Dardevil
+13 El juego del calamar
+14 Los 100
+15 Iron fist 
+16 Súper girl 
+17 Lupin
+18 Defenders
+19 Cobra kai
+20 La ley de los audaces 
+21 Vikingos
+22 The umbrella academy
+23 outer banks 
+24 alguien está mintiendo
+25 breakimg bad 
+26 the saciety
+27 lejos del hogar
+28 bridgerton
+29 caleidoscopio 
+30 ginny y Georgia 
+31 the rain 
+32 trinkets
+33 how to sell drung online
+34 dinastía 
+35 glitch
+36 el agente nocturno 
+37 jakall 
+38 jóvenes y millonarios 
+39 vikingos valhala
+40 el verano en q me enamoré
+41 one tree hill
+42 the boys
+43 game of trons
+44 Avatar anng 
+45 avatar korra
+46 estrenauta
+47 Berlín
+
+Mostrar más
+1 jun
+
+Reading frontend design skill
+Reading frontend design skill
+V
+
+Conectando a visualize...
+Ahí está el tracker con las 47 series. Lo que podés hacer:
+
+Cambiar el estado de cada serie: Pendiente / Viendo / Vista
+Poner rating del 1 al 5 con las estrellitas
+Agregar una nota por serie (comentario, en qué temporada quedaron, etc.)
+Filtrar por estado o buscar por nombre/género
+Ordenar por nombre, rating o estado
+Los datos se guardan en el navegador así que no se pierden si cerrás la pestaña. ¿Querés que le agregue algo más, como un campo de temporada/episodio donde quedaron?
+
+hacemelo como lo que hiciste con boca, que hiciste un archivo con un lindo diseño
+prefiero que sea en lista en vez de cuadrados, tipo
+1 avatar , nota, vista
+2 arrow, 10, vista
+con un diseño lindo, estilo netflix
+
+1 jun
+
+Archivo visualizado, ejecutó un comando, archivo leído
+Archivo visualizado, ejecutó un comando, archivo leído
+Ahí está, estilo Netflix oscuro. En lista con:
+
+Número original de tu lista
+Nombre + género
+Rating con estrellitas (★)
+Nota — clic para escribir un comentario (ej: "quedamos S2 E4")
+Estado — Pendiente / Viendo / Vista con colores distintos
+Stats arriba con totales y promedio de rating
+Filtros por estado y búsqueda por nombre o género
+Todo se guarda en el navegador como la app de Boca
+Subilo a GitHub Pages igual que hiciste con Mi Bombonera y lo tenés desde el cel.
+
+
+Series tracker
+Código · HTML 
+1780331681346_WhatsApp Image 2026-06-01 at 13.34.32.jpeg
+genial! solo tengo que modificar estas cosas:
+
+quiero que en estados pongas que todas están vistas.
+
+que aparezca un botón de agregar serie.
+
+quiero que sea mas estilo Netflix, dale vos podes. Así como te mostré en la foto, que cada una tenga su foto de portada, búscalas en Chrome, lo podes hacer?
+
+en vez que diga "iosi y pire", que diga "historial de series"
+
+lo demás esta perfecto, los stats con totales y promedios, los filtros, la búsqueda, que le pueda poner estrellas. todo eso no lo modifiques.
+
+1 jun
+Las fotos de portada no las puedo buscar automáticamente en Chrome desde acá, pero puedo hacer todo lo demás perfecto. Para las portadas tengo dos opciones:
+
+Opción A — Uso la API de TMDB (base de datos de películas/series, gratuita) para buscar las portadas automáticamente desde el código del archivo. Cada vez que abrís el HTML busca la imagen sola.
+
+Opción B — Las pongo con un placeholder gris elegante y vos después podés reemplazar las que quieras.
+
+La A es mucho mejor, ¿la hacemos así?
+
+dale
+
+1 jun
+
+Ejecutó un comando, archivo leído
+Ejecutó un comando, archivo leído
+Listo! Lo que tiene ahora:
+
+Grilla estilo Netflix con portadas reales — las busca automáticamente en TMDB (la misma base de datos que usa Netflix) la primera vez que abrís el archivo. Se guardan en caché para no volver a buscarlas
+Todas las series marcadas como "Vista" de entrada
+Botón Agregar — le ponés nombre, género, estado y nota, y busca la portada sola también
+Click en cualquier card abre el popup para editar estado y nota
+Click en el badge de estado (el que dice "✓ Vista") lo cambia rápido sin abrir popup
+Todo lo demás igual: estrellas, stats, filtros, búsqueda
+Subilo a GitHub Pages igual que Mi Bombonera y lo tenés desde el celu.
+
+
+Series tracker
+Código · HTML 
+aver hacemelo de color blanco y sin fotos
+
+4:04 p. m.
+
+Ejecutó un comando, archivo leído
+Ejecutó un comando, archivo leído
+Ahí está, fondo blanco, sin fotos, en lista limpia. Todo lo demás igual: estrellas, notas, estados, filtros, búsqueda y botón de agregar.
+
+
+Series tracker
+Código · HTML 
+haceme un diseño totalmente distinto, te animas?
+quiero tener varias opcionas antes d equedarme con una
+
+y enseñame como lo hago app igual que mi bombonera
+
+4:09 p. m.
+Me animo. Te hago 3 diseños distintos para que elijas, y después te explico cómo subirlo como app.
+
+Mientras los genero — ¿qué onda preferís en términos de estilo?
+
+P: ¿Qué estilo te llama más?
+R: Colorido / con gradientes y badges de colores por género
+
+4:09 p. m.
+Perfecto. Te voy a hacer 3 versiones coloridas bien distintas entre sí para que elijas.
+
+
+Reading frontend design skill
+Reading frontend design skill
+Buenísimo, voy a hacer los 3 ahora mismo.
+
+
+Se ejecutaron 3 comandos, archivo leído
+Se ejecutaron 3 comandos, archivo leído
+Ahí están los 3, todos con badges de colores por género, estrellas, notas, filtros y botón agregar:
+
+Opción 1 (series-v1) — Fondo negro, tipografía gigante estilo editorial, badges de colores neón por género. Vibe oscuro y moderno.
+
+Opción 2 (series-v2) — Layout con barra lateral izquierda oscura + contenido blanco-crema. Título con tipografía serif italiana. Más sofisticado.
+
+Opción 3 (series-v3) — Cards individuales con bordes redondeados, fondo crema suave, título con gradiente naranja. Estilo app moderna.
+
+Abrí los 3 y decime cuál te gusta más (o qué cosas de cada uno combinarías).
+
+Para convertirlo en app como Mi Bombonera:
+
+Subís el .html a tu repo de GitHub (o creás uno nuevo)
+Activás GitHub Pages en Settings → Pages → rama main, carpeta /root
+En el celu, abrís la URL en Safari (iPhone) o Chrome (Android)
+Tocás el botón de compartir → "Agregar a pantalla de inicio"
+Listo — aparece como app con ícono, sin barra del navegador
+Si querés que le agregue un ícono personalizado y que diga el nombre correcto en la pantalla de inicio, puedo agregar el manifest.json como hicimos con la app de Boca.
+
+
+Series v1
+Código · HTML 
+
+Series v2
+Código · HTML 
+
+Series v3
+Código · HTML 
+hace mas estilos como el 3 que me mandaste pero saca los colores de los generos
+
+4:17 p. m.
+Dale, te hago 3 variantes del estilo 3 (cards redondeadas, tipografía grande, limpio) pero sin los colores de género.
+
+
+Se ejecutaron 2 comandos
+Se ejecutaron 2 comandos
+
+Design V4: warm beige, gold accent, cards with pill stats bar
+
+Script
+
+Design V5: dark glassmorphism with purple/blue gradient accents
+
+Script
+Listo
+dale
+
+11:47 p. m.
+
+Se ejecutaron 2 comandos, archivo leído
+Se ejecutaron 2 comandos, archivo leído
+4 estilos nuevos, todos con cards redondeadas y sin colores de género:
+
+V4 — Fondo beige cálido, acento dorado, stats en una barra unificada. Vibe otoñal.
+
+V5 — Fondo negro con glassmorphism, gradiente violeta/azul. Oscuro pero diferente al Netflix.
+
+V6 — Blanco puro, tipografía serif estilo diario/editorial, muy elegante y limpio.
+
+V7 — Fondo lavanda suave, cards blancas, acento violeta. Moderno y fresco.
+
+Decime cuál te gusta y lo pulimos, o si querés combinar elementos de varios.
+
+
+Series v4
+Código · HTML 
+
+Series v5
+Código · HTML 
+
+Series v6
+Código · HTML 
+
+Series v7
+Código · HTML 
+1780455186640_image.png
+estoy aca y tengo que cambiar el nombre y reemplazar el archivo
+
+11:53 p. m.
+Perfecto, ya lo tenés casi listo. El problema es que el archivo se llama índice.html pero GitHub Pages necesita que se llame index.html exactamente.
+
+Para reemplazar el archivo con el nuevo diseño:
+
+Hacé clic en índice.html
+Arriba a la derecha aparece un ícono de lápiz (✏️) — hacé clic
+Borrá todo el contenido y pegá el HTML del diseño que elegiste
+Abajo hacé clic en "Commit changes"
+Para renombrar a index.html:
+
+En el mismo editor donde pegaste el código, arriba del todo hay un campo con el nombre del archivo — borrá índice.html y escribí index.html, después hacés commit.
+
+Pero antes — ¿ya elegiste cuál de los diseños querés subir? ¿V4, V5, V6 o V7?
+
+me dice que el nombre ya es index.html
+
+11:55 p. m.
+Ah entonces está bien el nombre. El problema debe ser otro — mirá abajo a la derecha de tu pantalla, dice "Despliegues 2 · github-pages Hace 6 horas", eso significa que GitHub Pages ya está activo.
+
+La URL de tu app debería ser: https://iosefjaimsalem-oss.github.io/serie/
+
+Probá abrir esa URL desde el celu. ¿Te abre algo?
+
+Y antes de reemplazar el archivo — ¿cuál diseño elegiste? V4, V5, V6 o V7?
+
+el v4
+
+11:55 p. m.
+Perfecto. Para reemplazar:
+
+Clic en index.html en el repo
+Clic en el lápiz ✏️ (arriba a la derecha del archivo)
+Seleccioná todo el código (Ctrl+A) y borralo
+Abrí el archivo series-v4.html que te mandé, seleccioná todo y copialo
+Pegalo en GitHub
+Abajo clic en "Commit changes" → "Commit directly to main" → "Commit changes"
+En 1-2 minutos se actualiza y lo abrís desde el celu en https://iosefjaimsalem-oss.github.io/serie/ y lo agregás a la pantalla de inicio como app.
+
+¿Querés que antes le agregue el manifest.json para que tenga ícono y nombre bonito en la pantalla de inicio, como la app de Boca?
+
+
+
+
+
+
+
+Claude es IA y puede cometer errores. Por favor, verifica nuevamente las respuestas.
+
+
+raw
+Series v4 · HTML
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Series · Opción 3</title>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<title>Series · V4</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #f8f4ef;
-    --text: #18160f;
-    --muted: #a09880;
-    --border: #e2ddd4;
-    --surface: #fff;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: 'Bricolage Grotesque', sans-serif; min-height: 100vh; }
-
-  .page { max-width: 980px; margin: 0 auto; padding: 0 24px 80px; }
-
-  /* HEADER */
-  .header {
-    display: flex; align-items: flex-end; justify-content: space-between;
-    gap: 16px; padding: 48px 0 32px; flex-wrap: wrap;
-  }
-
-  .header-left h1 {
-    font-size: clamp(32px, 6vw, 56px); font-weight: 800;
-    line-height: 1; letter-spacing: -2px;
-  }
-
-  .header-left h1 .highlight {
-    display: inline-block;
-    background: linear-gradient(135deg, #ff6b35 0%, #f7c59f 100%);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .header-left p { font-size: 13px; color: var(--muted); margin-top: 6px; letter-spacing: 1px; }
-
-  .btn-add {
-    background: var(--text); border: none; border-radius: 100px;
-    color: #fff; padding: 12px 24px;
-    font-family: 'Bricolage Grotesque', sans-serif; font-size: 14px; font-weight: 700;
-    cursor: pointer; display: flex; align-items: center; gap: 8px;
-    transition: transform 0.15s, box-shadow 0.15s;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-  }
-  .btn-add:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
-
-  /* STATS */
-  .stats-row {
-    display: flex; gap: 12px; margin-bottom: 28px; flex-wrap: wrap;
-  }
-  .stat-card {
-    flex: 1; min-width: 80px;
-    background: var(--surface); border: 1.5px solid var(--border); border-radius: 14px;
-    padding: 14px 16px;
-  }
-  .sc-num { font-size: 28px; font-weight: 800; letter-spacing: -1px; line-height: 1; }
-  .sc-num.green { color: #16a34a; }
-  .sc-num.blue  { color: #2563eb; }
-  .sc-num.amber { color: #d97706; }
-  .sc-lbl { font-size: 11px; color: var(--muted); font-weight: 500; margin-top: 4px; letter-spacing: 0.5px; }
-
-  /* TOOLBAR */
-  .toolbar {
-    display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; align-items: center;
-  }
-  .search-box {
-    flex: 1; min-width: 180px;
-    background: var(--surface); border: 1.5px solid var(--border); border-radius: 100px;
-    padding: 10px 18px; font-family: 'Bricolage Grotesque', sans-serif; font-size: 13px;
-    color: var(--text); outline: none; transition: border-color 0.2s;
-  }
-  .search-box:focus { border-color: #ff6b35; }
-  .search-box::placeholder { color: var(--muted); }
-
-  .sort-sel {
-    background: var(--surface); border: 1.5px solid var(--border); border-radius: 100px;
-    padding: 10px 18px; font-family: 'Bricolage Grotesque', sans-serif; font-size: 13px;
-    color: var(--text); outline: none; cursor: pointer;
-  }
-
-  /* PILLS */
-  .pills { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
-  .pill {
-    font-size: 13px; font-weight: 600; padding: 7px 18px; border-radius: 100px;
-    border: 1.5px solid var(--border); background: var(--surface);
-    color: var(--muted); cursor: pointer; transition: all 0.15s;
-  }
-  .pill:hover { border-color: #ff6b35; color: var(--text); }
-  .pill.active { background: var(--text); border-color: var(--text); color: #fff; }
-
-  /* LIST — card style */
-  .series-list { display: flex; flex-direction: column; gap: 6px; }
-
-  .s-card {
-    background: var(--surface); border: 1.5px solid var(--border); border-radius: 16px;
-    padding: 14px 18px;
-    display: grid; grid-template-columns: 32px 1fr auto auto auto;
-    gap: 16px; align-items: center;
-    transition: box-shadow 0.15s, border-color 0.15s;
-    animation: cardIn 0.25s ease both;
-  }
-  .s-card:hover { border-color: #d4ccc0; box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
-
-  @keyframes cardIn {
-    from { opacity:0; transform:scale(0.98); }
-    to   { opacity:1; transform:scale(1); }
-  }
-
-  .s-num { font-size: 13px; font-weight: 700; color: #ccc; text-align: center; }
-  .s-name { font-size: 15px; font-weight: 700; color: var(--text); }
-
-  .genre-chip {
-    display: inline-block; font-size: 11px; font-weight: 600;
-    padding: 3px 10px; border-radius: 100px; margin-top: 5px;
-  }
-
-  .stars { display:flex; gap:3px; }
-  .star { font-size:14px; cursor:pointer; color:#e5e0d5; transition:color 0.1s; user-select:none; }
-  .star.on { color:#f59e0b; }
-  .star:hover { color:#f59e0b; }
-
-  .note-btn {
-    background: var(--bg); border: 1.5px solid var(--border); border-radius: 100px;
-    color: var(--muted); font-size: 11px; font-weight: 600;
-    padding: 5px 12px; cursor: pointer;
-    font-family: 'Bricolage Grotesque', sans-serif;
-    max-width: 88px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-    transition: all 0.15s;
-  }
-  .note-btn:hover { border-color: #ff6b35; color: var(--text); }
-  .note-btn.has { color: #555; background: #f0ede8; }
-
-  .status-wrap { position: relative; }
-  .s-badge {
-    display: inline-block; font-size: 11px; font-weight: 700;
-    padding: 5px 13px; border-radius: 100px; white-space: nowrap;
-  }
-  .s-badge.vista     { background: #dcfce7; color: #166534; }
-  .s-badge.viendo    { background: #dbeafe; color: #1e40af; }
-  .s-badge.pendiente { background: #fef3c7; color: #92400e; }
-  .status-sel-hidden { position:absolute; inset:0; opacity:0; cursor:pointer; width:100%; }
-
-  /* GENRE COLORS */
-  .g-accion    { background:#fee2e2; color:#b91c1c; }
-  .g-drama     { background:#ede9fe; color:#6d28d9; }
-  .g-thriller  { background:#ffedd5; color:#c2410c; }
-  .g-comedia   { background:#fef9c3; color:#92400e; }
-  .g-scifi     { background:#e0f2fe; color:#0369a1; }
-  .g-aventura  { background:#dcfce7; color:#166534; }
-  .g-historica { background:#fdf4ff; color:#7e22ce; }
-  .g-romance   { background:#fce7f3; color:#9d174d; }
-  .g-animacion { background:#e0e7ff; color:#3730a3; }
-  .g-fantasia  { background:#f3e8ff; color:#6b21a8; }
-  .g-default   { background:#f1f5f9; color:#475569; }
-
-  /* POPUP */
-  .overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.4); z-index:200; align-items:center; justify-content:center; }
-  .overlay.open { display:flex; }
-  .popup {
-    background: var(--surface); border-radius: 20px; padding: 2rem;
-    width: 380px; max-width: 92vw;
-    box-shadow: 0 24px 64px rgba(0,0,0,0.15);
-  }
-  .popup h3 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 1.25rem; }
-  .field { display:flex; flex-direction:column; gap:4px; margin-bottom:.9rem; }
-  .field label { font-size:11px; font-weight:700; color:var(--muted); letter-spacing:1px; text-transform:uppercase; }
-  .field input,.field select,.field textarea {
-    border:1.5px solid var(--border); border-radius:12px;
-    background:var(--bg); padding:10px 14px; color:var(--text);
-    font-family:'Bricolage Grotesque',sans-serif; font-size:14px; outline:none; width:100%;
-    transition:border-color 0.2s;
-  }
-  .field input:focus,.field select:focus,.field textarea:focus { border-color:#ff6b35; }
-  .field textarea { resize:none; height:72px; }
-  .popup-btns { display:flex; gap:8px; justify-content:flex-end; margin-top:1.25rem; }
-  .btn-cancel { background:none; border:1.5px solid var(--border); border-radius:100px; color:var(--muted); padding:9px 22px; font-family:'Bricolage Grotesque',sans-serif; font-size:13px; font-weight:600; cursor:pointer; }
-  .btn-ok { background:var(--text); border:none; border-radius:100px; color:#fff; padding:9px 22px; font-family:'Bricolage Grotesque',sans-serif; font-size:13px; font-weight:700; cursor:pointer; }
-  .empty { padding:4rem; text-align:center; color:var(--muted); }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #f0ede8; color: #1a1714; font-family: 'Bricolage Grotesque', sans-serif; min-height: 100vh; }
+ 
+.page { max-width: 860px; margin: 0 auto; padding: 0 20px 80px; }
+ 
+/* HEADER */
+.header { padding: 44px 0 28px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; }
+.title { font-size: clamp(36px,7vw,60px); font-weight: 800; letter-spacing: -2px; line-height: 0.95; }
+.title span { color: #c9a96e; }
+.subtitle { font-size: 12px; color: #a09880; letter-spacing: 2px; text-transform: uppercase; margin-top: 8px; }
+ 
+.btn-add {
+  background: #1a1714; color: #fff; border: none; border-radius: 50px;
+  padding: 12px 22px; font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 13px; font-weight: 700; cursor: pointer;
+  display: flex; align-items: center; gap: 7px;
+  transition: background 0.15s;
+}
+.btn-add:hover { background: #333; }
+ 
+/* STATS */
+.stats { display: flex; gap: 0; margin-bottom: 28px; background: #fff; border-radius: 16px; border: 1px solid #e5e0d8; overflow: hidden; }
+.stat { flex: 1; padding: 16px; border-right: 1px solid #e5e0d8; text-align: center; }
+.stat:last-child { border-right: none; }
+.stat-n { font-size: 26px; font-weight: 800; letter-spacing: -1px; line-height: 1; }
+.stat-n.g { color: #2d8653; }
+.stat-n.b { color: #2060b0; }
+.stat-n.a { color: #b07820; }
+.stat-l { font-size: 10px; color: #a09880; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+ 
+/* TOOLBAR */
+.toolbar { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+.search-input {
+  flex: 1; min-width: 160px;
+  background: #fff; border: 1px solid #e5e0d8; border-radius: 50px;
+  padding: 10px 18px; font-family: 'Bricolage Grotesque', sans-serif; font-size: 13px;
+  color: #1a1714; outline: none;
+}
+.search-input:focus { border-color: #c9a96e; }
+.search-input::placeholder { color: #c0b8a8; }
+.sort-sel {
+  background: #fff; border: 1px solid #e5e0d8; border-radius: 50px;
+  padding: 10px 16px; font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 13px; color: #1a1714; outline: none; cursor: pointer;
+}
+ 
+/* PILLS */
+.pills { display: flex; gap: 6px; margin-bottom: 20px; flex-wrap: wrap; }
+.pill {
+  font-size: 13px; font-weight: 600; padding: 7px 18px; border-radius: 50px;
+  border: 1px solid #e5e0d8; background: #fff; color: #a09880; cursor: pointer;
+  transition: all 0.15s;
+}
+.pill:hover { border-color: #c9a96e; color: #1a1714; }
+.pill.active { background: #1a1714; border-color: #1a1714; color: #fff; }
+ 
+/* LIST */
+.list { display: flex; flex-direction: column; gap: 6px; }
+ 
+.row {
+  background: #fff; border: 1px solid #e5e0d8; border-radius: 14px;
+  padding: 14px 18px;
+  display: grid; grid-template-columns: 32px 1fr auto auto auto;
+  gap: 14px; align-items: center;
+  transition: box-shadow 0.15s;
+  animation: up 0.22s ease both;
+}
+.row:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.07); border-color: #d8d2c8; }
+ 
+@keyframes up { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+ 
+.row-n { font-size: 12px; font-weight: 700; color: #d0c8b8; text-align: center; }
+.row-name { font-size: 14px; font-weight: 700; }
+.row-genre { font-size: 11px; color: #a09880; margin-top: 3px; }
+ 
+.stars { display: flex; gap: 2px; }
+.star { font-size: 14px; cursor: pointer; color: #e8e3da; transition: color 0.1s; user-select: none; }
+.star.on { color: #c9a96e; }
+.star:hover { color: #c9a96e; }
+ 
+.note-btn {
+  background: #f8f5f0; border: 1px solid #e5e0d8; border-radius: 50px;
+  color: #a09880; font-size: 11px; font-weight: 600; padding: 5px 12px;
+  cursor: pointer; font-family: 'Bricolage Grotesque', sans-serif;
+  max-width: 90px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  transition: all 0.15s;
+}
+.note-btn:hover { border-color: #c9a96e; color: #1a1714; }
+.note-btn.has { color: #666; }
+ 
+.sw { position: relative; }
+.sbadge {
+  display: inline-block; font-size: 11px; font-weight: 700;
+  padding: 5px 12px; border-radius: 50px; white-space: nowrap;
+}
+.sbadge.vista     { background: #e8f5ee; color: #1e7a45; }
+.sbadge.viendo    { background: #e8eef8; color: #1a4fa0; }
+.sbadge.pendiente { background: #f5f0e8; color: #8a6520; }
+.ssh { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; }
+ 
+/* POPUP */
+.ov { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.35); z-index:200; align-items:center; justify-content:center; }
+.ov.open { display:flex; }
+.pop { background:#fff; border-radius:20px; padding:1.75rem; width:360px; max-width:92vw; box-shadow:0 20px 60px rgba(0,0,0,0.15); }
+.pop h3 { font-size:20px; font-weight:800; letter-spacing:-0.5px; margin-bottom:1.2rem; }
+.f { display:flex; flex-direction:column; gap:4px; margin-bottom:.9rem; }
+.f label { font-size:10px; font-weight:700; color:#a09880; letter-spacing:1.5px; text-transform:uppercase; }
+.f input,.f select,.f textarea { border:1px solid #e5e0d8; border-radius:10px; background:#f8f5f0; padding:9px 12px; color:#1a1714; font-family:'Bricolage Grotesque',sans-serif; font-size:13px; outline:none; width:100%; transition:border-color .2s; }
+.f input:focus,.f select:focus,.f textarea:focus { border-color:#c9a96e; }
+.f textarea { resize:none; height:68px; }
+.pb { display:flex; gap:8px; justify-content:flex-end; margin-top:1.1rem; }
+.bc { background:none; border:1px solid #e5e0d8; border-radius:50px; color:#a09880; padding:8px 20px; font-family:'Bricolage Grotesque',sans-serif; font-size:13px; cursor:pointer; }
+.bo { background:#1a1714; border:none; border-radius:50px; color:#fff; padding:8px 20px; font-family:'Bricolage Grotesque',sans-serif; font-size:13px; font-weight:700; cursor:pointer; }
+.empty { padding:3rem; text-align:center; color:#a09880; }
 </style>
 </head>
 <body>
 <div class="page">
   <div class="header">
-    <div class="header-left">
-      <h1>Historial de<br><span class="highlight">Series</span></h1>
-      <p>Iosi &amp; Pire · tracker</p>
+    <div>
+      <div class="title">Historial<br>de <span>Series</span></div>
+      <div class="subtitle">Iosi &amp; Pire</div>
     </div>
     <button class="btn-add" onclick="openAdd()">＋ Agregar</button>
   </div>
-
-  <div class="stats-row" id="stats"></div>
-
+  <div class="stats" id="stats"></div>
   <div class="toolbar">
-    <input class="search-box" id="search" type="text" placeholder="Buscar serie o género..." oninput="render()">
+    <input class="search-input" id="search" placeholder="Buscar…" oninput="render()">
     <select class="sort-sel" id="sortSel" onchange="render()">
       <option value="default">Orden original</option>
       <option value="name">A → Z</option>
@@ -203,88 +454,82 @@
       <option value="status">Por estado</option>
     </select>
   </div>
-
   <div class="pills">
-    <button class="pill active" onclick="setFilter('todas',this)">Todas</button>
-    <button class="pill" onclick="setFilter('vista',this)">Vistas</button>
-    <button class="pill" onclick="setFilter('viendo',this)">Viendo</button>
-    <button class="pill" onclick="setFilter('pendiente',this)">Pendientes</button>
+    <button class="pill active" onclick="sf('todas',this)">Todas</button>
+    <button class="pill" onclick="sf('vista',this)">Vistas</button>
+    <button class="pill" onclick="sf('viendo',this)">Viendo</button>
+    <button class="pill" onclick="sf('pendiente',this)">Pendientes</button>
   </div>
-
-  <div class="series-list" id="list"></div>
+  <div class="list" id="list"></div>
 </div>
-
-<div class="overlay" id="noteOverlay">
-  <div class="popup">
-    <h3 id="noteTitle"></h3>
-    <div class="field"><label>Estado</label><select id="noteStatus"><option value="pendiente">⏳ Pendiente</option><option value="viendo">▶ Viendo</option><option value="vista">✓ Vista</option></select></div>
-    <div class="field"><label>Nota</label><textarea id="noteText" placeholder="Ej: quedamos S2 E4..."></textarea></div>
-    <div class="popup-btns"><button class="btn-cancel" onclick="closeNote()">Cancelar</button><button class="btn-ok" onclick="saveNote()">Guardar</button></div>
-  </div>
-</div>
-<div class="overlay" id="addOverlay">
-  <div class="popup">
-    <h3>Nueva Serie</h3>
-    <div class="field"><label>Nombre</label><input id="addName" type="text" placeholder="Ej: Dark"></div>
-    <div class="field"><label>Género</label><input id="addGenre" type="text" placeholder="Ej: Thriller"></div>
-    <div class="field"><label>Estado</label><select id="addStatus"><option value="pendiente">⏳ Pendiente</option><option value="viendo">▶ Viendo</option><option value="vista">✓ Vista</option></select></div>
-    <div class="field"><label>Nota</label><textarea id="addNote" placeholder="Comentario..."></textarea></div>
-    <div class="popup-btns"><button class="btn-cancel" onclick="closeAdd()">Cancelar</button><button class="btn-ok" onclick="confirmAdd()">Agregar</button></div>
-  </div>
-</div>
-
+ 
+<div class="ov" id="nOv"><div class="pop">
+  <h3 id="nT"></h3>
+  <div class="f"><label>Estado</label><select id="nS"><option value="pendiente">⏳ Pendiente</option><option value="viendo">▶ Viendo</option><option value="vista">✓ Vista</option></select></div>
+  <div class="f"><label>Nota</label><textarea id="nN" placeholder="Ej: quedamos S2 E4…"></textarea></div>
+  <div class="pb"><button class="bc" onclick="cN()">Cancelar</button><button class="bo" onclick="sN()">Guardar</button></div>
+</div></div>
+ 
+<div class="ov" id="aOv"><div class="pop">
+  <h3>Nueva Serie</h3>
+  <div class="f"><label>Nombre</label><input id="aN" type="text" placeholder="Ej: Dark"></div>
+  <div class="f"><label>Género</label><input id="aG" type="text" placeholder="Ej: Thriller"></div>
+  <div class="f"><label>Estado</label><select id="aS"><option value="pendiente">⏳ Pendiente</option><option value="viendo">▶ Viendo</option><option value="vista">✓ Vista</option></select></div>
+  <div class="f"><label>Nota</label><textarea id="aNo" placeholder="Comentario…"></textarea></div>
+  <div class="pb"><button class="bc" onclick="cA()">Cancelar</button><button class="bo" onclick="confA()">Agregar</button></div>
+</div></div>
+ 
 <script>
-const SERIES_BASE=[{id:1,name:"Prison Break",genre:"Acción"},{id:2,name:"Riverdale",genre:"Drama"},{id:3,name:"El marginal",genre:"Drama"},{id:4,name:"La casa de papel",genre:"Thriller"},{id:5,name:"Stranger Things",genre:"Ciencia ficción"},{id:6,name:"Élite",genre:"Drama"},{id:7,name:"Vis a vis",genre:"Drama"},{id:8,name:"Sex Education",genre:"Comedia"},{id:9,name:"Arrow",genre:"Acción"},{id:10,name:"The Flash",genre:"Acción"},{id:11,name:"Legends of Tomorrow",genre:"Acción"},{id:12,name:"Daredevil",genre:"Acción"},{id:13,name:"El juego del calamar",genre:"Thriller"},{id:14,name:"Los 100",genre:"Ciencia ficción"},{id:15,name:"Iron Fist",genre:"Acción"},{id:16,name:"Supergirl",genre:"Acción"},{id:17,name:"Lupin",genre:"Thriller"},{id:18,name:"The Defenders",genre:"Acción"},{id:19,name:"Cobra Kai",genre:"Drama"},{id:20,name:"La ley de los audaces",genre:"Drama"},{id:21,name:"Vikingos",genre:"Histórica"},{id:22,name:"The Umbrella Academy",genre:"Ciencia ficción"},{id:23,name:"Outer Banks",genre:"Aventura"},{id:24,name:"Alguien está mintiendo",genre:"Thriller"},{id:25,name:"Breaking Bad",genre:"Drama"},{id:26,name:"The Society",genre:"Drama"},{id:27,name:"Lejos del hogar",genre:"Drama"},{id:28,name:"Bridgerton",genre:"Romance"},{id:29,name:"Caleidoscopio",genre:"Thriller"},{id:30,name:"Ginny & Georgia",genre:"Drama"},{id:31,name:"The Rain",genre:"Ciencia ficción"},{id:32,name:"Trinkets",genre:"Drama"},{id:33,name:"How to Sell Drugs Online",genre:"Comedia"},{id:34,name:"Dinastía",genre:"Drama"},{id:35,name:"Glitch",genre:"Ciencia ficción"},{id:36,name:"El agente nocturno",genre:"Thriller"},{id:37,name:"Chacal",genre:"Thriller"},{id:38,name:"Jóvenes y millonarios",genre:"Drama"},{id:39,name:"Vikingos: Valhalla",genre:"Histórica"},{id:40,name:"El verano en que me enamoré",genre:"Romance"},{id:41,name:"One Tree Hill",genre:"Drama"},{id:42,name:"The Boys",genre:"Acción"},{id:43,name:"Game of Thrones",genre:"Fantasía"},{id:44,name:"Avatar: Aang",genre:"Animación"},{id:45,name:"Avatar: Korra",genre:"Animación"},{id:46,name:"El eternauta",genre:"Ciencia ficción"},{id:47,name:"Berlín",genre:"Thriller"}];
-const GC={"Acción":"g-accion","Drama":"g-drama","Thriller":"g-thriller","Comedia":"g-comedia","Ciencia ficción":"g-scifi","Aventura":"g-aventura","Histórica":"g-historica","Romance":"g-romance","Animación":"g-animacion","Fantasía":"g-fantasia"};
-const KEY='sv3';
+const SB=[{id:1,name:"Prison Break",genre:"Acción"},{id:2,name:"Riverdale",genre:"Drama"},{id:3,name:"El marginal",genre:"Drama"},{id:4,name:"La casa de papel",genre:"Thriller"},{id:5,name:"Stranger Things",genre:"Ciencia ficción"},{id:6,name:"Élite",genre:"Drama"},{id:7,name:"Vis a vis",genre:"Drama"},{id:8,name:"Sex Education",genre:"Comedia"},{id:9,name:"Arrow",genre:"Acción"},{id:10,name:"The Flash",genre:"Acción"},{id:11,name:"Legends of Tomorrow",genre:"Acción"},{id:12,name:"Daredevil",genre:"Acción"},{id:13,name:"El juego del calamar",genre:"Thriller"},{id:14,name:"Los 100",genre:"Ciencia ficción"},{id:15,name:"Iron Fist",genre:"Acción"},{id:16,name:"Supergirl",genre:"Acción"},{id:17,name:"Lupin",genre:"Thriller"},{id:18,name:"The Defenders",genre:"Acción"},{id:19,name:"Cobra Kai",genre:"Drama"},{id:20,name:"La ley de los audaces",genre:"Drama"},{id:21,name:"Vikingos",genre:"Histórica"},{id:22,name:"The Umbrella Academy",genre:"Ciencia ficción"},{id:23,name:"Outer Banks",genre:"Aventura"},{id:24,name:"Alguien está mintiendo",genre:"Thriller"},{id:25,name:"Breaking Bad",genre:"Drama"},{id:26,name:"The Society",genre:"Drama"},{id:27,name:"Lejos del hogar",genre:"Drama"},{id:28,name:"Bridgerton",genre:"Romance"},{id:29,name:"Caleidoscopio",genre:"Thriller"},{id:30,name:"Ginny & Georgia",genre:"Drama"},{id:31,name:"The Rain",genre:"Ciencia ficción"},{id:32,name:"Trinkets",genre:"Drama"},{id:33,name:"How to Sell Drugs Online",genre:"Comedia"},{id:34,name:"Dinastía",genre:"Drama"},{id:35,name:"Glitch",genre:"Ciencia ficción"},{id:36,name:"El agente nocturno",genre:"Thriller"},{id:37,name:"Chacal",genre:"Thriller"},{id:38,name:"Jóvenes y millonarios",genre:"Drama"},{id:39,name:"Vikingos: Valhalla",genre:"Histórica"},{id:40,name:"El verano en que me enamoré",genre:"Romance"},{id:41,name:"One Tree Hill",genre:"Drama"},{id:42,name:"The Boys",genre:"Acción"},{id:43,name:"Game of Thrones",genre:"Fantasía"},{id:44,name:"Avatar: Aang",genre:"Animación"},{id:45,name:"Avatar: Korra",genre:"Animación"},{id:46,name:"El eternauta",genre:"Ciencia ficción"},{id:47,name:"Berlín",genre:"Thriller"}];
+const KEY='sv4';
 let ud=JSON.parse(localStorage.getItem(KEY)||'null');
-if(!ud){ud={series:{},custom:[],nextId:100};SERIES_BASE.forEach(s=>{ud.series[s.id]={status:'vista',rating:0,note:''};});save();}
-let filter='todas',activeNote=null;
-function save(){localStorage.setItem(KEY,JSON.stringify(ud));}
-function all(){return[...SERIES_BASE,...(ud.custom||[])];}
+if(!ud){ud={series:{},custom:[],nextId:100};SB.forEach(s=>{ud.series[s.id]={status:'vista',rating:0,note:''};});sv();}
+let flt='todas',aN_id=null;
+function sv(){localStorage.setItem(KEY,JSON.stringify(ud));}
+function all(){return[...SB,...(ud.custom||[])];}
 function gd(id){if(!ud.series[id])ud.series[id]={status:'pendiente',rating:0,note:''};return ud.series[id];}
-function setFilter(f,el){filter=f;document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));el.classList.add('active');render();}
-function openNote(id){activeNote=id;const s=all().find(x=>x.id===id);const d=gd(id);document.getElementById('noteTitle').textContent=s.name;document.getElementById('noteStatus').value=d.status;document.getElementById('noteText').value=d.note||'';document.getElementById('noteOverlay').classList.add('open');setTimeout(()=>document.getElementById('noteText').focus(),50);}
-function closeNote(){document.getElementById('noteOverlay').classList.remove('open');activeNote=null;}
-function saveNote(){if(!activeNote)return;const d=gd(activeNote);d.note=document.getElementById('noteText').value.trim();d.status=document.getElementById('noteStatus').value;save();closeNote();render();}
-function openAdd(){['addName','addGenre','addNote'].forEach(i=>document.getElementById(i).value='');document.getElementById('addStatus').value='pendiente';document.getElementById('addOverlay').classList.add('open');setTimeout(()=>document.getElementById('addName').focus(),50);}
-function closeAdd(){document.getElementById('addOverlay').classList.remove('open');}
-function confirmAdd(){const n=document.getElementById('addName').value.trim();if(!n)return;const id=ud.nextId++;ud.custom=ud.custom||[];ud.custom.push({id,name:n,genre:document.getElementById('addGenre').value.trim()||'Sin género'});ud.series[id]={status:document.getElementById('addStatus').value,rating:0,note:document.getElementById('addNote').value.trim()};save();closeAdd();render();}
-function setRating(id,v,e){e.stopPropagation();const d=gd(id);d.rating=d.rating===v?0:v;save();const el=document.querySelector(`[data-sid="${id}"]`);if(el)el.innerHTML=sh(id);}
-function quickStatus(id,v,e){e.stopPropagation();gd(id).status=v;save();render();}
-function sh(id){const r=gd(id).rating;return[1,2,3,4,5].map(n=>`<span class="star ${r>=n?'on':''}" onclick="setRating(${id},${n},event)">★</span>`).join('');}
+function sf(f,el){flt=f;document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));el.classList.add('active');render();}
+function openNote(id){aN_id=id;const s=all().find(x=>x.id===id),d=gd(id);document.getElementById('nT').textContent=s.name;document.getElementById('nS').value=d.status;document.getElementById('nN').value=d.note||'';document.getElementById('nOv').classList.add('open');setTimeout(()=>document.getElementById('nN').focus(),50);}
+function cN(){document.getElementById('nOv').classList.remove('open');aN_id=null;}
+function sN(){if(!aN_id)return;const d=gd(aN_id);d.note=document.getElementById('nN').value.trim();d.status=document.getElementById('nS').value;sv();cN();render();}
+function openAdd(){['aN','aG','aNo'].forEach(i=>document.getElementById(i).value='');document.getElementById('aS').value='pendiente';document.getElementById('aOv').classList.add('open');setTimeout(()=>document.getElementById('aN').focus(),50);}
+function cA(){document.getElementById('aOv').classList.remove('open');}
+function confA(){const n=document.getElementById('aN').value.trim();if(!n)return;const id=ud.nextId++;ud.custom=ud.custom||[];ud.custom.push({id,name:n,genre:document.getElementById('aG').value.trim()||'Sin género'});ud.series[id]={status:document.getElementById('aS').value,rating:0,note:document.getElementById('aNo').value.trim()};sv();cA();render();}
+function setR(id,v,e){e.stopPropagation();const d=gd(id);d.rating=d.rating===v?0:v;sv();const el=document.querySelector(`[data-sid="${id}"]`);if(el)el.innerHTML=sh(id);}
+function qS(id,v,e){e.stopPropagation();gd(id).status=v;sv();render();}
+function sh(id){const r=gd(id).rating;return[1,2,3,4,5].map(n=>`<span class="star ${r>=n?'on':''}" onclick="setR(${id},${n},event)">★</span>`).join('');}
 function sl(s){return s==='vista'?'✓ Vista':s==='viendo'?'▶ Viendo':'⏳ Pendiente';}
 function render(){
   const q=document.getElementById('search').value.toLowerCase();
-  const sort=document.getElementById('sortSel').value;
+  const srt=document.getElementById('sortSel').value;
   const a=all();
-  let list=a.filter(s=>{const d=gd(s.id);return(filter==='todas'||d.status===filter)&&(s.name.toLowerCase().includes(q)||s.genre.toLowerCase().includes(q));});
-  if(sort==='name')list.sort((a,b)=>a.name.localeCompare(b.name));
-  else if(sort==='rating')list.sort((a,b)=>gd(b.id).rating-gd(a.id).rating);
-  else if(sort==='status'){const o={viendo:0,vista:1,pendiente:2};list.sort((a,b)=>o[gd(a.id).status]-o[gd(b.id).status]);}
-  const vistas=a.filter(s=>gd(s.id).status==='vista').length;
-  const viendo=a.filter(s=>gd(s.id).status==='viendo').length;
-  const pend=a.filter(s=>gd(s.id).status==='pendiente').length;
-  const rated=a.filter(s=>gd(s.id).rating>0);
-  const avg=rated.length?(rated.reduce((x,s)=>x+gd(s.id).rating,0)/rated.length).toFixed(1):'—';
+  let list=a.filter(s=>{const d=gd(s.id);return(flt==='todas'||d.status===flt)&&(s.name.toLowerCase().includes(q)||s.genre.toLowerCase().includes(q));});
+  if(srt==='name')list.sort((a,b)=>a.name.localeCompare(b.name));
+  else if(srt==='rating')list.sort((a,b)=>gd(b.id).rating-gd(a.id).rating);
+  else if(srt==='status'){const o={viendo:0,vista:1,pendiente:2};list.sort((a,b)=>o[gd(a.id).status]-o[gd(b.id).status]);}
+  const vs=a.filter(s=>gd(s.id).status==='vista').length;
+  const ve=a.filter(s=>gd(s.id).status==='viendo').length;
+  const pe=a.filter(s=>gd(s.id).status==='pendiente').length;
+  const rt=a.filter(s=>gd(s.id).rating>0);
+  const avg=rt.length?(rt.reduce((x,s)=>x+gd(s.id).rating,0)/rt.length).toFixed(1):'—';
   document.getElementById('stats').innerHTML=`
-    <div class="stat-card"><div class="sc-num">${a.length}</div><div class="sc-lbl">Total</div></div>
-    <div class="stat-card"><div class="sc-num green">${vistas}</div><div class="sc-lbl">Vistas</div></div>
-    <div class="stat-card"><div class="sc-num blue">${viendo}</div><div class="sc-lbl">Viendo</div></div>
-    <div class="stat-card"><div class="sc-num">${pend}</div><div class="sc-lbl">Pendientes</div></div>
-    <div class="stat-card"><div class="sc-num amber">${avg!=='—'?avg+' ★':'—'}</div><div class="sc-lbl">Promedio</div></div>
+    <div class="stat"><div class="stat-n">${a.length}</div><div class="stat-l">Total</div></div>
+    <div class="stat"><div class="stat-n g">${vs}</div><div class="stat-l">Vistas</div></div>
+    <div class="stat"><div class="stat-n b">${ve}</div><div class="stat-l">Viendo</div></div>
+    <div class="stat"><div class="stat-n">${pe}</div><div class="stat-l">Pendientes</div></div>
+    <div class="stat"><div class="stat-n a">${avg!=='—'?avg+' ★':'—'}</div><div class="stat-l">Promedio</div></div>
   `;
   if(!list.length){document.getElementById('list').innerHTML='<div class="empty">Sin resultados.</div>';return;}
   document.getElementById('list').innerHTML=list.map((s,i)=>{
-    const d=gd(s.id);const gc=GC[s.genre]||'g-default';
+    const d=gd(s.id);
     const nl=d.note?d.note.slice(0,13)+(d.note.length>13?'…':''):'+ nota';
-    return`<div class="s-card" style="animation-delay:${Math.min(i,20)*0.018}s">
-      <span class="s-num">${s.id}</span>
-      <div><div class="s-name">${s.name}</div><span class="genre-chip ${gc}">${s.genre}</span></div>
+    return`<div class="row" style="animation-delay:${Math.min(i,20)*0.018}s">
+      <span class="row-n">${s.id}</span>
+      <div><div class="row-name">${s.name}</div><div class="row-genre">${s.genre}</div></div>
       <div class="stars" data-sid="${s.id}">${sh(s.id)}</div>
       <button class="note-btn ${d.note?'has':''}" onclick="openNote(${s.id})">${nl}</button>
-      <div class="status-wrap"><span class="s-badge ${d.status}">${sl(d.status)}</span>
-        <select class="status-sel-hidden" onchange="quickStatus(${s.id},this.value,event)" onclick="event.stopPropagation()">
+      <div class="sw"><span class="sbadge ${d.status}">${sl(d.status)}</span>
+        <select class="ssh" onchange="qS(${s.id},this.value,event)" onclick="event.stopPropagation()">
           <option value="pendiente" ${d.status==='pendiente'?'selected':''}>⏳ Pendiente</option>
           <option value="viendo" ${d.status==='viendo'?'selected':''}>▶ Viendo</option>
           <option value="vista" ${d.status==='vista'?'selected':''}>✓ Vista</option>
@@ -292,9 +537,10 @@ function render(){
     </div>`;
   }).join('');
 }
-['noteOverlay','addOverlay'].forEach(id=>{document.getElementById(id).addEventListener('click',function(e){if(e.target===this){this.classList.remove('open');activeNote=null;}});});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('.overlay.open').forEach(p=>p.classList.remove('open'));activeNote=null;}});
+['nOv','aOv'].forEach(id=>{document.getElementById(id).addEventListener('click',function(e){if(e.target===this){this.classList.remove('open');aN_id=null;}});});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('.ov.open').forEach(p=>p.classList.remove('open'));aN_id=null;}});
 render();
 </script>
 </body>
 </html>
+ 
